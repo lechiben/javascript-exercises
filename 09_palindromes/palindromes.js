@@ -1,19 +1,19 @@
-const palindromes = function (str) {
-    const alphanumerical = 'abcdefghijklmnopqrstuvwxyz0123456789';
-    const cleanString = str
-    .toLowerCase()
-    .split('')
-    .filter((characters) => alphanumerical.includes(characters))
-    .join('');
+const input = document.getElementById("input")
 
-    const reverseString = cleanString.split('').reverse().join('');
-    
-    return cleanString == reverseString;
-};
+function reverseString(str){
+    return str.split("").reverse().join("")
+}
 
-// Do not edit below this line
-module.exports = palindromes;
+function check(){
+    const value = input.value
+    const reverse = reverseString(value)
+    if (value === reverse) {
+        alert("Palindrome")
+    } else {
+        alert("Not Palindrome")
+    }
+    input.value = ""
+}
 
-
-//step 1: remove all the space in the string. 
-//step 2: check if  string[0] = string[string.length]
+// // Do not edit below this line
+// module.exports = palindromes;
